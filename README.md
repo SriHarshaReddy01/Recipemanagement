@@ -1,7 +1,9 @@
 # RecipeCore - Recipe Management System
 
-A full-stack Recipe Management System built with .NET 10 backend and React TypeScript frontend, demonstrating Clean Architecture principles and modern web development practices.
+Ein Full-Stack-Rezeptverwaltungssystem, das mit einem .NET 10-Backend und einem React TypeScript-Frontend erstellt wurde und die Prinzipien der Clean Architecture sowie moderne Webentwicklungsmethoden demonstriert.
 
+English:
+A full-stack Recipe Management System built with .NET 10 backend and React TypeScript frontend, demonstrating Clean Architecture principles and modern web development practices.
 ## 📋 Table of Contents
 
 - [Overview](#overview)
@@ -70,6 +72,48 @@ The project showcases **Clean Architecture**, **Repository Pattern**, **Unit of 
 - ✅ Data persistence with SQLite
 
 ---
+Deutsch:
+
+RecipeCore ist ein umfassendes Rezeptverwaltungssystem, mit dem Benutzer folgende Funktionen nutzen können:
+
+Registrieren und authentifizieren
+Rezepte erstellen, bearbeiten und löschen
+Rezepte nach Kategorien und Zutaten organisieren
+Lieblingsrezepte anderer Benutzer markieren
+Rezepte nach verschiedenen Kriterien suchen und filtern
+Detaillierte Rezeptinformationen mit Schritt-für-Schritt-Anleitungen anzeigen
+Das Projekt demonstriert Clean Architecture, Repository Pattern, Unit of Work und moderne Full-Stack-Entwicklungspraktiken.
+
+✨ Funktionen
+Benutzerverwaltung
+✅ Benutzerregistrierung mit Passwort-Hashing
+✅ Benutzerauthentifizierung
+✅ Anzeige des Benutzerprofils
+✅ Nachverfolgung der Rezeptbesitzer
+Rezeptverwaltung
+✅ Erstellen von Rezepten mit Zutaten, Kategorien und Schritten
+✅ Bearbeiten bestehender Rezepte (nur für Besitzer)
+✅ Löschen von Rezepten
+✅ Alle Rezepte mit Suchfunktion anzeigen
+✅ Detaillierte Rezeptinformationen anzeigen
+✅ Nach Kategorie, Zutat oder Benutzer filtern
+✅ Validierung eindeutiger Rezeptnamen
+Kategorien- und Zutatenverwaltung
+✅ Kategorien erstellen, aktualisieren und löschen
+✅ Zutaten erstellen (globale Zutatenliste)
+✅ Rezepte nach Kategorie oder Zutat durchsuchen
+✅ Eindeutige Namensbeschränkungen
+Favoritensystem
+✅ Rezepte zu Favoriten hinzufügen
+✅ Aus Favoriten entfernen
+✅ Lieblingsrezepte des Benutzers anzeigen
+✅ Einschränkung: Eigene Rezepte können nicht zu Favoriten hinzugefügt werden
+Geschäftsregeln und Validierung
+✅ Rezepte müssen mindestens 1 Zutat, 1 Kategorie und 1 Schritt enthalten
+✅ Eindeutige Einschränkungen für Benutzernamen, Rezeptnamen, Kategorien und Zutaten
+✅ Passwortsicherheit mit Hashing
+✅ Datenpersistenz mit SQLite
+
 
 ## 🛠 Technology Stack
 
@@ -101,14 +145,14 @@ The project showcases **Clean Architecture**, **Repository Pattern**, **Unit of 
 - **Node.js 20.19+** or **22.12+** ([Download](https://nodejs.org/))
 - **Visual Studio 2022** or **VS Code** with C# extension
 
-### 1. Clone the Repository
+### 1.  Klonen Sie das Repository (Clone the Repository)
 
 ```bash
 git clone <repository-url>
 cd "Recipe  management"
 ```
 
-### 2. Start the Backend API
+### 2.Starten Sie die Backend-API ( Start the Backend API)
 
 ```bash
 # Navigate to API project
@@ -121,14 +165,14 @@ dotnet restore
 dotnet run --urls "http://localhost:5000"
 ```
 
-The API will be available at:
+Die API ist verfügbar unter (The API will be available at) :
 
 - **API**: http://localhost:5000/api
 - **Swagger UI**: http://localhost:5000/swagger
 
-### 3. Start the Frontend
+### 3. Starten Sie das Frontend (Start the Frontend)
 
-Open a **new terminal** and run:
+Öffnen Sie ein **neues Terminal** und führen Sie Folgendes aus (Open a **new terminal** and run) :
 
 ```bash
 # Navigate to frontend project
@@ -141,18 +185,18 @@ npm install
 npm run dev
 ```
 
-The frontend will be available at:
+Das Frontend ist verfügbar unter (The frontend will be available at) :
 
 - **Frontend**: http://localhost:5173
 
 ### 4. Access the Application
 
-1. Open your browser to **http://localhost:5173**
-2. Login with demo credentials:
+1. Öffnen Sie Ihren Browser unter (Open your browser) to **http://localhost:5173**
+2. Melden Sie sich mit den Demo-Anmeldedaten an (Login with demo credentials) :
    - **Username**: `john_chef` | **Password**: `password123`
    - **Username**: `jane_cook` | **Password**: `password456`
    - **Username**: `bob_baker` | **Password**: `password789`
-3. Start exploring recipes!
+3. Entdecken Sie die Rezepte! (Start exploring recipes!)
 
 ---
 
@@ -250,13 +294,13 @@ http://localhost:5000/api
 | DELETE | `/favorites` | Remove favorite |
 | GET | `/favorites/check` | Check if favorited |
 
-For complete API documentation, visit **http://localhost:5000/swagger** when the API is running.
-
+Die vollständige API-Dokumentation finden Sie unter **http://localhost:5000/swagger**, wenn die API ausgeführt wird.
+EN: For complete API documentation, visit **http://localhost:5000/swagger** when the API is running.
 ---
 
 ## 💻 Frontend Guide
 
-### Available Routes
+### Verfügbare Routen (Available Routes)
 
 | Route | Component | Description |
 |-------|-----------|-------------|
@@ -274,32 +318,37 @@ For complete API documentation, visit **http://localhost:5000/swagger** when the
 | `/manage-categories` | CategoryManagement | Manage categories |
 | `/manage-ingredients` | IngredientManagement | Manage ingredients |
 
-### Key Components
+### Wichtige Komponenten (Key Components)
 
 **Layout.tsx**
-- Main application layout with responsive navigation
-- Conditional rendering based on authentication
-- Sticky header with dropdown menus
+-  Hauptlayout der Anwendung mit responsiver Navigation (Main application layout with responsive navigation)
+- Bedingte Darstellung basierend auf Authentifizierung (Conditional rendering based on authentication)
+- Sticky-Header mit Dropdown-Menüs (Sticky header with dropdown menus)
 
 **RecipeCard.tsx**
-- Reusable recipe card component
-- Displays recipe preview with categories
-- Responsive grid layout
+- Wiederverwendbare Rezeptkarten-Komponente (Reusable recipe card component)
+- Zeigt eine Rezeptvorschau mit Kategorien an (Displays recipe preview with categories)
+- Responsives Rasterlayout (Responsive grid layout)
 
 **AuthContext.tsx**
-- React Context for authentication state
-- Login, register, and logout functionality
-- LocalStorage persistence
+- React Context für Authentifizierungsstatus (React Context for authentication state)
+- Funktionen für Anmeldung, Registrierung und Abmeldung (Login, register, and logout functionality)
+- Persistenz in LocalStorage (LocalStorage persistence)
 
 ### Styling
 
+Das Frontend verwendet **TailwindCSS** für das Styling mit einem benutzerdefinierten Farbschema:
+- **Primär**: Orange (#EA580C)
+- **Sekundär**: Grau
+- **Erfolg**: Grün
+- **Responsive Breakpoints**: sm (640px), md (768px), lg (1024px)
+
+EN:
 The frontend uses **TailwindCSS** for styling with a custom color scheme:
 - **Primary**: Orange (#EA580C)
 - **Secondary**: Gray
 - **Success**: Green
 - **Responsive breakpoints**: sm (640px), md (768px), lg (1024px)
-
----
 
 ## 🗄 Database Schema
 
@@ -346,6 +395,23 @@ The frontend uses **TailwindCSS** for styling with a custom color scheme:
 - RecipeId (FK → Recipes)
 - CreatedAt
 
+1. Überprüfen Sie **Swagger UI** unter http://localhost:5000/swagger für API-Tests.
+2. Überprüfen Sie die Browserkonsole auf Frontend-Fehler.
+
+
+## 📝 Lizenz
+
+Dies ist ein Demonstrationsprojekt zu Bildungszwecken, das nach den Prinzipien der Clean Architecture und SOLID erstellt wurde.
+
+## 📧 Support
+
+Bei Fragen oder Problemen:
+1. Überprüfen Sie die Dokumentationsdateien im Projektstammverzeichnis.
+2. Lesen Sie den Abschnitt zur Fehlerbehebung oben.
+3. Testen Sie die Endpunkte mit Swagger UI.
+4. Überprüfen Sie die Browserkonsole auf Frontend-Fehler.
+
+English :
 
 1. Check **Swagger UI** at http://localhost:5000/swagger for API testing
 2. Review browser console for frontend errors
@@ -365,14 +431,14 @@ For questions or issues:
 
 ---
 
-- ✅ **Backend API** - Complete with all CRUD operations
-- ✅ **Frontend UI** - Complete with responsive design
-- ✅ **API Integration** - Fully integrated
-- ✅ **Authentication** - User login/register implemented
-- ✅ **Database** - SQLite with sample data
-- ✅ **Documentation** - Comprehensive docs provided
-- ✅ **Demo Application** - Console demo available
-- ✅ **Testing** - Manual testing complete
+- ✅ **Backend API** - Komplett mit allen CRUD-Operationen (EN : Complete with all CRUD operations)
+- ✅ **Frontend UI** -  Komplett mit responsivem Design (EN: Complete with responsive design)
+- ✅ **API Integration** - Vollständig integriert  (EN: Fully integrated)
+- ✅ **Authentication** - Benutzeranmeldung/-registrierung implementiert  (EN: User login/register implemented)
+- ✅ **Database** - SQLite mit Beispieldaten  (EN: SQLite with sample data)
+- ✅ **Documentation** - Umfassende Dokumentation vorhanden  (EN: Comprehensive docs provided)
+- ✅ **Demo Application** -  Konsolen-Demo verfügbar (EN: Console demo available )
+- ✅ **Testing** - Manuelles Testen abgeschlossen (EN:  Manual testing complete)
 
 ---
 
