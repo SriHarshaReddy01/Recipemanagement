@@ -1,0 +1,523 @@
+===============================================
+RECIPECORE BACKEND API DOCUMENTATION
+===============================================
+
+PROJECT OVERVIEW
+===============================================
+
+RecipeCore Backend is a .NET 10 REST API built with Clean Architecture principles.
+It provides a complete recipe management system with user authentication, recipe CRUD,
+categories, ingredients, and favorites functionality.
+
+Technology Stack:
+- .NET 10
+- ASP.NET Core Web API
+- Entity Framework Core 10.0.2
+- SQLite Database
+- Swagger/OpenAPI for documentation
+
+
+ARCHITECTURE
+===============================================
+
+Clean Architecture Layers:
+
+1. RecipeCore.Domain
+   - Contains core business entities
+   - No dependencies on other layers
+   - Entities: User, Recipe, Ingredient, Category, Favorite, RecipeStep, etc.
+
+2. RecipeCore.Application
+   - Business logic and validation
+   - Service layer (UserService, RecipeService, etc.)
+   - Repository interfaces
+   - Independent of infrastructure
+
+3. RecipeCore.Infrastructure
+   - Data access with EF Core
+   - Repository implementations
+   - DbContext and database configuration
+   - SQLite persistence
+
+4. RecipeCore.API
+   - REST API controllers
+   - HTTP endpoints
+   - CORS configuration
+   - Swagger documentation
+
+
+PROJECT STRUCTURE
+===============================================
+
+backend/
+├── RecipeCore.Domain/
+│   └── Entities/
+│       ├── User.cs
+│       ├── Recipe.cs
+│       ├── Ingredient.cs
+│       ├── Category.cs
+│       ├── Favorite.cs
+│       ├── RecipeIngredient.cs
+│       ├── RecipeCategory.cs
+│       └── RecipeStep.cs
+│
+├── RecipeCore.Application/
+│   ├── Interfaces/
+│   │   ├── IRepository.cs
+│   │   ├── IUserRepository.cs
+│   │   ├── IRecipeRepository.cs
+│   │   ├── IIngredientRepository.cs
+│   │   ├── ICategoryRepository.cs
+│   │   ├── IFavoriteRepository.cs
+│   │   └── IUnitOfWork.cs
+│   └── Services/
+│       ├── UserService.cs
+│       ├── RecipeService.cs
+│       ├── IngredientService.cs
+│       ├── CategoryService.cs
+│       └── FavoriteService.cs
+│
+├── RecipeCore.Infrastructure/
+│   ├── Persistence/
+│   │   └── RecipeDbContext.cs
+│   └── Repositories/
+│       ├── Repository.cs
+│       ├── UserRepository.cs
+│       ├── RecipeRepository.cs
+│       ├── IngredientRepository.cs
+│       ├── CategoryRepository.cs
+│       ├── FavoriteRepository.cs
+│       └── UnitOfWork.cs
+│
+├── RecipeCore.API/
+│   ├── Controllers/
+│   │   ├── RecipesController.cs
+│   │   ├── CategoriesController.cs
+│   │   ├── IngredientsController.cs
+│   │   └── UsersController.cs
+│   └── Program.cs
+│
+└── RecipeCore.Demo/
+    └── Program.cs (Console demo application)
+
+
+SETUP & INSTALLATION
+===============================================
+
+Prerequisites:
+- .NET 10 SDK or later
+- Visual Studio 2022 or VS Code with C# extension
+
+Installation Steps:
+
+1. Navigate to the backend folder:
+   cd "d:\Startup\Recipe  management\backend"
+
+2. Restore NuGet packages:
+   dotnet restore
+
+3. Build the solution:
+   dotnet build
+
+4. Run the API:
+   cd RecipeCore.API
+   dotnet run --urls "http://localhost:5000"
+
+5. Access Swagger UI:
+   Open http://localhost:5000/swagger in your browser
+
+
+DATABASE
+===============================================
+
+Database: SQLite (recipes.db)
+Location: backend/RecipeCore.API/recipes.db
+
+The database is automatically created on first run with sample data:
+- 3 Users (john_chef, jane_cook, bob_baker)
+- 3 Recipes (Spaghetti Carbonara, Chocolate Pancakes, Margherita Pizza)
+- 4 Categories (Italian, Dessert, Vegetarian, Breakfast)
+- 10 Ingredients (Flour, Sugar, Eggs, Milk, Butter, Tomato, Cheese, Pasta, Basil, Chocolate)
+
+To reset the database:
+1. Stop the API
+2. Delete recipes.db file
+3. Restart the API (database will be recreated)
+
+
+API ENDPOINTS
+===============================================
+
+Base URL: http://localhost:5000/api
+
+RECIPES
+-------
+GET    /recipes
+       Returns all recipes with owner, ingredients, categories, and steps
+       Response: Recipe[]
+
+GET    /recipes/{id}
+       Returns a single recipe by ID with full details
+       Parameters: id (Guid)
+       Response: Recipe
+
+GET    /recipes/user/{userId}
+       Returns all recipes created by a specific user
+       Parameters: userId (Guid)
+       Response: Recipe[]
+
+GET    /recipes/category/{categoryId}
+       Returns all recipes in a specific category
+       Parameters: categoryId (Guid)
+       Response: Recipe[]
+
+GET    /recipes/ingredient/{ingredientId}
+       Returns all recipes containing a specific ingredient
+       Parameters: ingredientId (Guid)
+       Response: Recipe[]
+
+POST   /recipes
+       Creates a new recipe
+       Request Body: CreateRecipeRequest
+       {
+         "name": "string",
+         "description": "string",
+         "ownerUserId": "guid",
+         "ingredients": [
+           {
+             "ingredientId": "guid",
+             "quantity": "string"
+           }
+         ],
+         "categoryIds": ["guid"],
+         "steps": ["string"]
+       }
+       Response: Recipe (201 Created)
+
+DELETE /recipes/{id}
+       Deletes a recipe
+       Parameters: id (Guid)
+       Response: 204 No Content
+
+
+CATEGORIES
+----------
+GET    /categories
+       Returns all categories
+       Response: Category[]
+
+GET    /categories/{id}
+       Returns a single category by ID
+       Parameters: id (Guid)
+       Response: Category
+
+POST   /categories
+       Creates a new category
+       Request Body: { "name": "string" }
+       Response: Category (201 Created)
+
+PUT    /categories/{id}
+       Updates a category name
+       Parameters: id (Guid)
+       Request Body: { "name": "string" }
+       Response: Category
+
+DELETE /categories/{id}
+       Deletes a category
+       Parameters: id (Guid)
+       Response: 204 No Content
+
+
+INGREDIENTS
+-----------
+GET    /ingredients
+       Returns all ingredients
+       Response: Ingredient[]
+
+GET    /ingredients/{id}
+       Returns a single ingredient by ID
+       Parameters: id (Guid)
+       Response: Ingredient
+
+POST   /ingredients
+       Creates a new ingredient
+       Request Body: { "name": "string" }
+       Response: Ingredient (201 Created)
+
+
+USERS
+-----
+GET    /users
+       Returns all users
+       Response: User[]
+
+GET    /users/{id}
+       Returns a single user by ID
+       Parameters: id (Guid)
+       Response: User
+
+POST   /users/register
+       Registers a new user
+       Request Body: { "username": "string", "password": "string" }
+       Response: User (201 Created)
+
+POST   /users/authenticate
+       Authenticates a user
+       Request Body: { "username": "string", "password": "string" }
+       Response: User (200 OK) or 401 Unauthorized
+
+
+DATA MODELS
+===============================================
+
+User
+----
+{
+  "userId": "guid",
+  "username": "string",
+  "passwordHash": "string",
+  "createdAt": "datetime"
+}
+
+Recipe
+------
+{
+  "recipeId": "guid",
+  "name": "string",
+  "description": "string",
+  "ownerUserId": "guid",
+  "createdAt": "datetime",
+  "owner": User,
+  "recipeIngredients": RecipeIngredient[],
+  "recipeCategories": RecipeCategory[],
+  "steps": RecipeStep[]
+}
+
+Ingredient
+----------
+{
+  "ingredientId": "guid",
+  "name": "string"
+}
+
+Category
+--------
+{
+  "categoryId": "guid",
+  "name": "string"
+}
+
+RecipeIngredient
+----------------
+{
+  "recipeId": "guid",
+  "ingredientId": "guid",
+  "quantity": "string",
+  "ingredient": Ingredient
+}
+
+RecipeCategory
+--------------
+{
+  "recipeId": "guid",
+  "categoryId": "guid",
+  "category": Category
+}
+
+RecipeStep
+----------
+{
+  "recipeStepId": "guid",
+  "recipeId": "guid",
+  "stepNumber": "int",
+  "description": "string"
+}
+
+
+BUSINESS RULES & VALIDATION
+===============================================
+
+Recipe Constraints:
+- Recipe name must be globally unique
+- Must have at least 1 ingredient
+- Must have at least 1 category
+- Must have at least 1 preparation step
+- Each recipe belongs to exactly one owner
+
+User Constraints:
+- Username must be unique
+- Password is hashed using SHA256
+- Only registered users can create recipes
+
+Category Constraints:
+- Category name must be unique
+
+Ingredient Constraints:
+- Ingredient name must be unique
+- Ingredients are global (not user-specific)
+
+Favorite Constraints:
+- Users cannot favorite their own recipes
+- Each user-recipe combination is unique
+
+
+CORS CONFIGURATION
+===============================================
+
+The API is configured to accept requests from:
+- http://localhost:5173 (Frontend development server)
+
+To add more origins, update Program.cs:
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173", "https://yourdomain.com")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+
+ERROR HANDLING
+===============================================
+
+The API returns standard HTTP status codes:
+
+200 OK - Request successful
+201 Created - Resource created successfully
+204 No Content - Delete successful
+400 Bad Request - Validation error or business rule violation
+401 Unauthorized - Authentication failed
+404 Not Found - Resource not found
+500 Internal Server Error - Server error
+
+Error Response Format:
+{
+  "error": "Error message description"
+}
+
+
+TESTING
+===============================================
+
+Using Swagger UI:
+1. Start the API
+2. Navigate to http://localhost:5000/swagger
+3. Expand any endpoint
+4. Click "Try it out"
+5. Fill in parameters
+6. Click "Execute"
+
+Using curl:
+# Get all recipes
+curl http://localhost:5000/api/recipes
+
+# Get recipe by ID
+curl http://localhost:5000/api/recipes/{guid}
+
+# Create a category
+curl -X POST http://localhost:5000/api/categories \
+  -H "Content-Type: application/json" \
+  -d '{"name":"New Category"}'
+
+
+DEMO APPLICATION
+===============================================
+
+The RecipeCore.Demo console application demonstrates all features:
+
+To run:
+cd "d:\Startup\Recipe  management\backend\RecipeCore.Demo"
+dotnet run
+
+Features demonstrated:
+- User registration and authentication
+- Category and ingredient creation
+- Recipe creation with validation
+- Query recipes by user, category, ingredient
+- Favorites management
+- Constraint validation testing
+
+
+DEPLOYMENT CONSIDERATIONS
+===============================================
+
+For Production:
+1. Change SQLite to SQL Server or PostgreSQL
+2. Add proper authentication (JWT tokens)
+3. Implement rate limiting
+4. Add logging (Serilog, NLog)
+5. Configure HTTPS
+6. Update CORS for production domain
+7. Add API versioning
+8. Implement caching (Redis)
+9. Add health checks
+10. Configure environment-specific settings
+
+
+TROUBLESHOOTING
+===============================================
+
+Issue: Port 5000 already in use
+Solution: Use a different port
+   dotnet run --urls "http://localhost:5001"
+
+Issue: Database locked
+Solution: Stop all running instances and delete recipes.db
+
+Issue: CORS errors in frontend
+Solution: Verify backend is running on http://localhost:5000
+   Check CORS policy includes frontend URL
+
+Issue: Navigation properties are null
+Solution: Ensure repository methods include .Include() for related entities
+
+Issue: Build errors
+Solution: Run "dotnet restore" and "dotnet build"
+
+
+PERFORMANCE OPTIMIZATION
+===============================================
+
+Current optimizations:
+- Eager loading with .Include() for related entities
+- Indexed columns (Username, Recipe Name, etc.)
+- Async/await for all database operations
+- Reference handling for circular dependencies in JSON
+
+Future optimizations:
+- Add caching for frequently accessed data
+- Implement pagination for large result sets
+- Use projection (Select) to return only needed fields
+- Add database query logging to identify slow queries
+
+
+SECURITY NOTES
+===============================================
+
+Current implementation:
+- Passwords are hashed with SHA256
+- No plaintext credentials stored
+- CORS configured for specific origins
+
+Production recommendations:
+- Use bcrypt or Argon2 for password hashing
+- Implement JWT authentication
+- Add role-based authorization
+- Use HTTPS only
+- Implement rate limiting
+- Add input validation and sanitization
+- Use parameterized queries (already done with EF Core)
+- Implement API key authentication for external access
+
+
+SUPPORT & DOCUMENTATION
+===============================================
+
+Swagger UI: http://localhost:5000/swagger
+PRD Document: d:\Startup\Recipe  management\PRD.MD
+Main README: d:\Startup\Recipe  management\README.txt
+Run Guide: d:\Startup\Recipe  management\HOW_TO_RUN.txt
+
+===============================================
