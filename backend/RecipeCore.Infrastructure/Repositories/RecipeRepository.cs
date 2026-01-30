@@ -83,4 +83,18 @@ public class RecipeRepository : Repository<Recipe>, IRecipeRepository
             .Include(r => r.Steps.OrderBy(s => s.StepNumber))
             .FirstOrDefaultAsync(r => r.RecipeId == id);
     }
+
+    // Methods to add child entities to DBcontext
+    public async Task AddRecipeIngredientAsync(RecipeIngredient recipeIngredient)
+    {
+        await _context.RecipeIngredients.AddAsync(recipeIngredient);
+    }
+    public async Task AddRecipeCategoryAsync(RecipeCategory recipeCategory)
+    {
+        await _context.RecipeCategories.AddAsync(recipeCategory);
+    }
+    public async Task AddRecipeStepAsync(RecipeStep recipeStep)
+    {
+        await _context.RecipeSteps.AddAsync(recipeStep);
+    }
 }

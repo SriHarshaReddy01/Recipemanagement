@@ -1555,11 +1555,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
+      "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
       "projectName": "RecipeCore.API",
-      "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
+      "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
       "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.API\\obj\\",
+      "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1574,11 +1574,11 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
-              "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
+            "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
+              "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
             },
-            "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj"
+            "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj"
             }
           }
         }

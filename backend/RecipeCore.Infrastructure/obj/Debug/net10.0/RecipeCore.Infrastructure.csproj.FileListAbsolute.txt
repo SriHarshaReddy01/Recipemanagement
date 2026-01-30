@@ -36,3 +36,23 @@ C:\Users\sriha\SAXOPrint\Recipe  management\backend\RecipeCore.Infrastructure\ob
 C:\Users\sriha\SAXOPrint\Recipe  management\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.pdb
 C:\Users\sriha\SAXOPrint\Recipe  management\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.genruntimeconfig.cache
 C:\Users\sriha\SAXOPrint\Recipe  management\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\ref\RecipeCore.Infrastructure.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Infrastructure.deps.json
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Infrastructure.runtimeconfig.json
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Infrastructure.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Infrastructure.pdb
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Application.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Domain.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Domain.pdb
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\bin\Debug\net10.0\RecipeCore.Application.pdb
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.AssemblyInfo.cs
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.sourcelink.json
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCo.2D1C68D1.Up2Date
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\refint\RecipeCore.Infrastructure.dll
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.pdb
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\RecipeCore.Infrastructure.genruntimeconfig.cache
+C:\Users\sriha\SAXOPrint\Recipemanagement\backend\RecipeCore.Infrastructure\obj\Debug\net10.0\ref\RecipeCore.Infrastructure.dll

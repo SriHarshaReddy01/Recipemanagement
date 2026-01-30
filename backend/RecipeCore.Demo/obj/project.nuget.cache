@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5AFDzek9VPo=",
+  "dgSpecHash": "xlp6gy0kZMI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
+  "projectFilePath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sriha\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.build.framework\\18.0.2\\microsoft.build.framework.18.0.2.nupkg.sha512",

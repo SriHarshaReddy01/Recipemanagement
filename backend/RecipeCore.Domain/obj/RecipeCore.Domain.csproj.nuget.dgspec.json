@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {}
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
         "projectName": "RecipeCore.Domain",
-        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
+        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
         "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\obj\\",
+        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"

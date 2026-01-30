@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj": {}
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj",
+        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj",
         "projectName": "RecipeCore.Application",
-        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj",
+        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj",
         "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\obj\\",
+        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
-                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj"
+              "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
+                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj"
               }
             }
           }
@@ -340,14 +340,14 @@
         }
       }
     },
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj": {
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
+        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
         "projectName": "RecipeCore.Demo",
-        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
+        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\RecipeCore.Demo.csproj",
         "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Demo\\obj\\",
+        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -362,11 +362,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
-                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
+              "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
+                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
               },
-              "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj"
+              "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj"
               }
             }
           }
@@ -687,14 +687,14 @@
         }
       }
     },
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
         "projectName": "RecipeCore.Domain",
-        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
+        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj",
         "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\obj\\",
+        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1019,14 +1019,14 @@
         }
       }
     },
-    "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
+    "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj",
         "projectName": "RecipeCore.Infrastructure",
-        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\RecipeCore.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\sriha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sriha\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -1041,11 +1041,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
-                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
+              "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj": {
+                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Application\\RecipeCore.Application.csproj"
               },
-              "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
-                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj"
+              "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj": {
+                "projectPath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.Domain\\RecipeCore.Domain.csproj"
               }
             }
           }

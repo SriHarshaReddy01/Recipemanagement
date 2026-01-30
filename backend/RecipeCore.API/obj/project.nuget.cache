@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MWTBApKI1/4=",
+  "dgSpecHash": "Rx5Fc5wjcoQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sriha\\SAXOPrint\\Recipe  management\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
+  "projectFilePath": "C:\\Users\\sriha\\SAXOPrint\\Recipemanagement\\backend\\RecipeCore.API\\RecipeCore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-preview.7.25380.108\\microsoft.aspnetcore.openapi.10.0.0-preview.7.25380.108.nupkg.sha512",
     "C:\\Users\\sriha\\.nuget\\packages\\microsoft.data.sqlite.core\\10.0.2\\microsoft.data.sqlite.core.10.0.2.nupkg.sha512",

@@ -99,76 +99,159 @@ public class RecipeService
         List<(Guid ingredientId, string quantity)> ingredients,
         List<Guid> categoryIds,
         List<string> steps)
-    {
-        var recipe = await _unitOfWork.Recipes.GetByIdWithDetailsAsync(recipeId);
+    /* { // commented out as this method is tracking navigation properties. .Clear() marks entities for deletion but they are not deleted until SaveChangesAsync is called. This can lead to issues if the same entities are re-added before saving.
+         var recipe = await _unitOfWork.Recipes.GetByIdWithDetailsAsync(recipeId);
+         if (recipe == null)
+             throw new InvalidOperationException("Recipe not found");
+
+         if (string.IsNullOrWhiteSpace(name))
+             throw new ArgumentException("Recipe name cannot be empty");
+
+         var existingRecipe = await _unitOfWork.Recipes.GetByNameAsync(name);
+         if (existingRecipe != null && existingRecipe.RecipeId != recipeId)
+             throw new InvalidOperationException($"Recipe with name '{name}' already exists");
+
+         if (ingredients == null || ingredients.Count == 0)
+             throw new ArgumentException("Recipe must have at least one ingredient");
+
+         if (categoryIds == null || categoryIds.Count == 0)
+             throw new ArgumentException("Recipe must have at least one category");
+
+         if (steps == null || steps.Count == 0)
+             throw new ArgumentException("Recipe must have at least one preparation step");
+
+         recipe.Name = name;
+         recipe.Description = description;
+
+         recipe.RecipeIngredients.Clear();
+         foreach (var (ingredientId, quantity) in ingredients)
+         {
+             var ingredient = await _unitOfWork.Ingredients.GetByIdAsync(ingredientId);
+             if (ingredient == null)
+                 throw new InvalidOperationException($"Ingredient with ID {ingredientId} not found");
+
+             recipe.RecipeIngredients.Add(new RecipeIngredient
+             {
+                 RecipeId = recipe.RecipeId,
+                 IngredientId = ingredientId,
+                 Quantity = quantity
+             });
+         }
+
+         recipe.RecipeCategories.Clear();
+         foreach (var categoryId in categoryIds)
+         {
+             var category = await _unitOfWork.Categories.GetByIdAsync(categoryId);
+             if (category == null)
+                 throw new InvalidOperationException($"Category with ID {categoryId} not found");
+
+             recipe.RecipeCategories.Add(new RecipeCategory
+             {
+                 RecipeId = recipe.RecipeId,
+                 CategoryId = categoryId
+             });
+         }
+
+         recipe.Steps.Clear();
+         for (int i = 0; i < steps.Count; i++)
+         {
+             recipe.Steps.Add(new RecipeStep
+             {
+                 RecipeStepId = Guid.NewGuid(),
+                 RecipeId = recipe.RecipeId,
+                 StepNumber = i + 1,
+                 Description = steps[i]
+             });
+         }
+
+         await _unitOfWork.Recipes.UpdateAsync(recipe);
+         await _unitOfWork.SaveChangesAsync();
+
+         return recipe;
+     }*/
+    {   // Validate inputs
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Recipe name cannot be empty");
+        if (ingredients == null || ingredients.Count == 0)
+            throw new ArgumentException("Recipe must have at least one ingredient");
+        if (categoryIds == null || categoryIds.Count == 0)
+            throw new ArgumentException("Recipe must have at least one category");
+        if (steps == null || steps.Count == 0)
+            throw new ArgumentException("Recipe must have at least one preparation step");
+
+        // Validate the recipe exists (load without related entities)
+        var recipe = await _unitOfWork.Recipes.GetByIdAsync(recipeId);
         if (recipe == null)
             throw new InvalidOperationException("Recipe not found");
 
-        if (string.IsNullOrWhiteSpace(name))
-            throw new ArgumentException("Recipe name cannot be empty");
-
+        // Check for duplicate name
         var existingRecipe = await _unitOfWork.Recipes.GetByNameAsync(name);
         if (existingRecipe != null && existingRecipe.RecipeId != recipeId)
             throw new InvalidOperationException($"Recipe with name '{name}' already exists");
 
-        if (ingredients == null || ingredients.Count == 0)
-            throw new ArgumentException("Recipe must have at least one ingredient");
-
-        if (categoryIds == null || categoryIds.Count == 0)
-            throw new ArgumentException("Recipe must have at least one category");
-
-        if (steps == null || steps.Count == 0)
-            throw new ArgumentException("Recipe must have at least one preparation step");
-
-        recipe.Name = name;
-        recipe.Description = description;
-
-        recipe.RecipeIngredients.Clear();
-        foreach (var (ingredientId, quantity) in ingredients)
+        // Validate all ingredients exist
+        foreach (var (ingredientId, _) in ingredients)
         {
             var ingredient = await _unitOfWork.Ingredients.GetByIdAsync(ingredientId);
             if (ingredient == null)
                 throw new InvalidOperationException($"Ingredient with ID {ingredientId} not found");
+        }
 
-            recipe.RecipeIngredients.Add(new RecipeIngredient
+        // Validate all categories exist
+        foreach (var categoryId in categoryIds)
+        {
+            var category = await _unitOfWork.Categories.GetByIdAsync(categoryId);
+            if (category == null)
+                throw new InvalidOperationException($"Category with ID {categoryId} not found");
+        }
+
+        // Update recipe basic properties
+        recipe.Name = name;
+        recipe.Description = description;
+        // Delete all existing child entities directly from the database
+        await _unitOfWork.DeleteRecipeCategoriesAsync(recipeId);
+        await _unitOfWork.DeleteRecipeStepsAsync(recipeId);
+        await _unitOfWork.DeleteRecipeIngredientsAsync(recipeId);
+
+        // Save the recipe property updates first
+        await _unitOfWork.SaveChangesAsync();
+
+        // Now add new child entities in a fresh context
+        foreach (var (ingredientId, quantity) in ingredients)
+        {
+            await _unitOfWork.Recipes.AddRecipeIngredientAsync(new RecipeIngredient
             {
                 RecipeId = recipe.RecipeId,
                 IngredientId = ingredientId,
                 Quantity = quantity
             });
         }
-
-        recipe.RecipeCategories.Clear();
         foreach (var categoryId in categoryIds)
         {
-            var category = await _unitOfWork.Categories.GetByIdAsync(categoryId);
-            if (category == null)
-                throw new InvalidOperationException($"Category with ID {categoryId} not found");
-
-            recipe.RecipeCategories.Add(new RecipeCategory
+            await _unitOfWork.Recipes.AddRecipeCategoryAsync(new RecipeCategory
             {
-                RecipeId = recipe.RecipeId,
+                RecipeId = recipeId,
                 CategoryId = categoryId
             });
         }
 
-        recipe.Steps.Clear();
         for (int i = 0; i < steps.Count; i++)
         {
-            recipe.Steps.Add(new RecipeStep
+            await _unitOfWork.Recipes.AddRecipeStepAsync(new RecipeStep
             {
                 RecipeStepId = Guid.NewGuid(),
-                RecipeId = recipe.RecipeId,
+                RecipeId = recipeId,
                 StepNumber = i + 1,
                 Description = steps[i]
             });
         }
-
-        await _unitOfWork.Recipes.UpdateAsync(recipe);
+        // Save all new child entities
         await _unitOfWork.SaveChangesAsync();
-
-        return recipe;
+        // Return the updated recipe with all details
+        return await _unitOfWork.Recipes.GetByIdWithDetailsAsync(recipeId)
+                ?? throw new InvalidOperationException("Recipe not found after update");
     }
+
 
     public async Task DeleteRecipeAsync(Guid recipeId)
     {

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecipeCore.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e51afe6f3400d19d475969f74779e742b0963be")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecipeCore.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecipeCore.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
